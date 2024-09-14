@@ -54,3 +54,15 @@ const hideMobileMenu = () => {
 
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
+
+// Our values
+
+document.querySelectorAll('.value-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+      card.classList.add('hovered');
+  });
+  card.addEventListener('mouseleave', () => {
+      card.classList.remove('hovered');
+  });
+});
