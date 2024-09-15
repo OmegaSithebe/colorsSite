@@ -66,3 +66,26 @@ document.querySelectorAll('.value-card').forEach(card => {
       card.classList.remove('hovered');
   });
 });
+
+// FAQs
+
+// Select all FAQ items
+const faqItems = document.querySelectorAll('.faq-item');
+
+// Add event listener to each FAQ question
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+
+  question.addEventListener('click', () => {
+    // Toggle 'active' class on the clicked item
+    item.classList.toggle('active');
+
+    // Close other open items, if necessary
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('active');
+      }
+    });
+  });
+});
+

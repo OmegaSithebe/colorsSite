@@ -851,10 +851,17 @@ h2 {
 }
 
 
-/* FAQs */
-
+/* FAQ Section Styles */
 .faq-section {
   padding: 20px;
+  background-color: #f8f5ef;
+}
+
+.faq-title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .faq-container {
@@ -863,7 +870,7 @@ h2 {
 }
 
 .faq-item {
-  background-color: white;
+  background-color: #ffffff;
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -874,8 +881,10 @@ h2 {
 .faq-question {
   padding: 15px;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #f8f5ef;
+  color: #333;
   position: relative;
 }
 
@@ -895,6 +904,7 @@ h2 {
   display: none;
   border-top: 1px solid #e0e0e0;
   background-color: #ffffff;
+  color: #666;
 }
 
 .faq-item.active .faq-answer {
@@ -904,6 +914,7 @@ h2 {
 .faq-item.active .faq-question::after {
   transform: translateY(-50%) rotate(180deg);
 }
+
 
 /* Our Team Section */
 
