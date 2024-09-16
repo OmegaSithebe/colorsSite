@@ -13,7 +13,7 @@ I have it already
 It's contact details are
 063 194 5093
 Address 
-103 Pongolo street zandspruit, Roodepoort.1269
+
 
 
 ================================================================================
@@ -91,7 +91,7 @@ Would you like help with any specific design elements, such as color choices, ty
 Directors 
 
 Bongani Dyala Mr 
-Busisiwe Jane Magalane Ms 
+Busisiwe Jane Magalane Ms  
 Anele Magalane Ms
 
 
@@ -146,6 +146,121 @@ www.linankosifoundation.co.za
 
 I picked up the idea on day one of COVID 19 Lock down 
 
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+To tailor Nkosingiphile Omega Sithebe's CV for The Haggie® Steel Wire Rope company, it is essential to align it with the company's focus on engineering, manufacturing, and technical expertise. Here’s a modified version of the CV emphasizing these areas:
+
+---
+
+**Curriculum Vitae**
+
+**Nkosingiphile Omega Sithebe**
+
+**Objective:**  
+A dedicated and highly skilled software engineer with a passion for technical innovation and problem-solving. Eager to contribute my expertise in software, networking, and engineering processes to support The Haggie® Steel Wire Rope's mission of delivering high-quality steel wire ropes for mining and other applications.
+
+---
+
+**Education and Certifications:**
+
+- **Software Engineer Diploma (2024)**  
+  Institution: Tshwane University of Technology (TUT)  
+  Faculty: Information Communication Technology (ICT)
+
+- **Information Technology Certified Professional: Software Engineer, ITCP(SA)**  
+  The Academy of Accelerated Technology Education (AATE)
+
+- **Technical Certifications:**
+  - CompTIA A+
+  - Microsoft Certified: Azure Fundamentals
+  - Microsoft Certified: Security Compliance and Identity Fundamentals
+  - Cisco CyberOps Associate
+  - Ethical Hacking  
+  *(Additional certifications related to cybersecurity, network configuration, and data science available upon request.)*
+
+---
+
+**Technical Skills:**
+
+- **Programming Languages:**  
+  C++, Structure Query Language (SQL), HTML, CSS & JavaScript, Angular, Python, Java
+
+- **Operating Systems:**  
+  Linux (Shell - Ubuntu), Windows Microsoft  
+  *Experience with hypervisors like VMWare (ESXi)*
+
+- **Networking Tools:**  
+  Virtual Box, Packet Tracer, Network support and security, Networking devices and troubleshooting
+
+---
+
+**Relevant Experience:**
+
+**Software Engineer (Nov 2022 – Nov 2023)**  
+The Academy of Accelerated Technology Education (AATE)  
+- Developed and implemented software solutions for large-scale clients such as Investec Bank, focusing on efficiency, security, and process automation.  
+- Collaborated with cross-functional teams to optimize software used in financial technology systems.  
+- Applied programming and networking skills to ensure optimal system performance and security.
+
+*Reference:*  
+Elinor Laing  
+Head of Student Operations, The AATE  
+Email: elinor@theaate.co.za
+
+**Computer Technician (Jan 2024 – Nov 2024)**  
+Velisa Africa (hosted by Data Science)  
+- Performed troubleshooting, maintenance, and configuration of complex computer networks.  
+- Supported high-demand technical environments, providing technical expertise in network security and system optimization.
+
+*Reference:*  
+Pauli Taylor  
+Velisa Africa Manager  
+Email: pauli@velisaafrica.co.za  
+
+---
+
+**Projects:**  
+*Link to coding and software projects:*  
+[GitHub Portfolio](https://github.com/OmegaSithebe)
+
+---
+
+**Core Competencies:**
+
+- **Technical Acumen:** Strong foundation in software engineering with a focus on system performance, process automation, and network management. Capable of working within manufacturing settings to develop and maintain industrial software and networking systems.
+  
+- **Problem-Solving and Innovation:** Adept at analyzing complex technical issues and implementing creative, scalable solutions. My background in software engineering allows me to contribute effectively to production processes and the automation required for industrial efficiency.
+
+- **Collaboration and Leadership:** Proven ability to work independently and as part of a team in fast-paced, technically challenging environments. Skilled at communicating complex technical concepts to both technical and non-technical stakeholders.
+
+---
+
+**Hobbies and Interests:**
+
+- Exploring engineering and technology developments, particularly in automated manufacturing systems and networking.
+- Engaging in coding boot camps to refine my technical expertise.
+- Reading about advancements in mining technologies and industrial applications.
+  
+---
+
+**Personal Details:**  
+- **Email:** rogersithebe@gmail.com  
+- **Phone:** 060 674 9861  
+- **Driver’s License:** Code 10-C1  
+- **Date of Birth:** 09 October 1995  
+- **Nationality:** South African  
+- **Gender:** Male  
+- **Address:** Pimville Zone 4, Soweto, Johannesburg  
+
+---
+
+By reorienting the CV toward technical skills in engineering, networking, and manufacturing processes, it becomes more aligned with The Haggie® Steel Wire Rope's industry requirements.
 
 
 

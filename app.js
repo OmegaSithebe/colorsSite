@@ -10,40 +10,60 @@ const mobileMenu = () => {
 
 menu.addEventListener('click', mobileMenu);
 
-// Show active menu when scrolling
+// Navbar Hide/Show on Scroll
+let prevScrollPos = window.pageYOffset;
+window.onscroll = () => {
+  const currentScrollPos = window.pageYOffset;
+  const navbar = document.querySelector('.navbar');
+
+  if (prevScrollPos > currentScrollPos) {
+    navbar.style.top = '0';  // Show navbar
+  } else {
+    navbar.style.top = '-80px';  // Hide navbar
+  }
+  prevScrollPos = currentScrollPos;
+};
+
+// Highlight Active Menu Item and Smooth Scrolling
 const highlightMenu = () => {
-  const elem = document.querySelector('.highlight');
   const homeMenu = document.querySelector('#home-page');
   const aboutMenu = document.querySelector('#about-page');
-  const servicesMenu = document.querySelector('#services-page');
-  let scrollPos = window.scrollY;
-  // console.log(scrollPos);
+  const focusMenu = document.querySelector('#focus-page');
+  const valuesMenu = document.querySelector('#values-page');
+  const faqsMenu = document.querySelector('#faqs-page');
+  const teamMenu = document.querySelector('#team-page');
+  const scrollPos = window.scrollY;
 
-  // adds 'highlight' class to my menu items
-  if (window.innerWidth > 960 && scrollPos < 600) {
+  // Highlight active section
+  if (scrollPos < 600) {
     homeMenu.classList.add('highlight');
     aboutMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
+  } else if (scrollPos < 1400) {
     aboutMenu.classList.add('highlight');
     homeMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
-    servicesMenu.classList.add('highlight');
+    focusMenu.classList.remove('highlight');
+  } else if (scrollPos < 2200) {
+    focusMenu.classList.add('highlight');
     aboutMenu.classList.remove('highlight');
-    return;
-  }
-
-  if ((elem && window.innerWIdth < 960 && scrollPos < 600) || elem) {
-    elem.classList.remove('highlight');
+    valuesMenu.classList.remove('highlight');
+  } else if (scrollPos < 3000) {
+    valuesMenu.classList.add('highlight');
+    focusMenu.classList.remove('highlight');
+    faqsMenu.classList.remove('highlight');
+  } else if (scrollPos < 3800) {
+    faqsMenu.classList.add('highlight');
+    valuesMenu.classList.remove('highlight');
+    teamMenu.classList.remove('highlight');
+  } else if (scrollPos < 4600) {
+    teamMenu.classList.add('highlight');
+    faqsMenu.classList.remove('highlight');
   }
 };
 
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
 
-//  Close mobile Menu when clicking on a menu item
+// Close mobile menu when clicking on a menu item
 const hideMobileMenu = () => {
   const menuBars = document.querySelector('.is-active');
   if (window.innerWidth <= 768 && menuBars) {
@@ -54,6 +74,7 @@ const hideMobileMenu = () => {
 
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
 
 
 // Our values
