@@ -972,6 +972,7 @@ button:hover {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap; 
 }
 
 .box {
@@ -1003,6 +1004,20 @@ button:hover {
 .box:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%; 
+    margin-bottom: 15px; 
+  }
 }
 
 /* Map */
