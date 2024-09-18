@@ -8,7 +8,7 @@
 }
 
 .navbar {
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,8 +31,8 @@
 }
 
 #navbar__logo img {
-  width: 120px; /* Adjusted logo width */
-  height: auto; /* Auto-resize height for responsiveness */
+  width: 140px; 
+  height: auto; 
 }
 
 .navbar__menu {
@@ -86,19 +86,48 @@
 @media screen and (max-width: 960px) {
   .navbar__menu {
     display: grid;
+    height: 100px;
     position: absolute;
     top: -1000px;
     width: 100%;
     transition: all 0.5s ease;
     z-index: -1;
+    font-family: Arial, sans-serif;
+    justify-items: center; 
   }
 
   .navbar__menu.active {
     background: #ffffff;
     top: 100%;
     z-index: 99;
-    height: 60vh;
-    font-size: 1.6rem;
+    height: auto;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .navbar__menu li {
+    list-style: none;
+    padding: 10px 0;
+  }
+
+  .navbar__menu a {
+    text-decoration: none;
+    color: #686868;
+    transition: color 0.3s ease;
+  }
+
+  .navbar__menu a:hover {
+    color: #fcac18; 
+    cursor: pointer;
+  }
+
+  .navbar__menu a.active {
+    color: #fcac18; 
+  }
+
+  .navbar__btn .button {
+    color: #ffffff;
   }
 
   .navbar__toggle .bar {
@@ -106,6 +135,7 @@
     width: 25px;
     height: 3px;
     background: #333;
+    cursor: pointer;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
   }
@@ -123,11 +153,66 @@
   }
 }
 
+.navbar__menu a {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.navbar__menu .menu-item {
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+/* Pointer on hover */
+.navbar__menu li:hover {
+  cursor: pointer;
+}
+
+/* Add padding around 'Contact Us' */
+.navbar__menu .contact-us {
+  background-color: #ff6347;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.navbar__menu .contact-us:hover {
+  background-color: #ff4500; /* Darker shade on hover */
+  cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
-  background: #ffffff;
-  background: linear-gradient(to right, #ffffff, #ffffff);
-  padding: 100px 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(images/United\ people.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; /* Adjust this value to control the opacity */
+  z-index: 1; /* Ensure the image stays behind the text */
+}
+
+.hero h1, .hero p, .hero .main__btn {
+  position: relative;
+  z-index: 2; 
 }
 
 .hero__container {
@@ -242,6 +327,10 @@
   font-size: 1rem;
   font-weight: 530;
   font: sans-serif;
+}
+
+.main__content .founded-p {
+  font-weight: bold;
 }
 
 .main__btn {
@@ -387,6 +476,7 @@
 /* Focus Section */
 .focus-area {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
   max-width: 1300px;
@@ -467,6 +557,29 @@ h2 {
   object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+  .focus-grid {
+    grid-template-columns: 1fr; /* Stack focus items in a single column */
+  }
+
+  .image-section {
+    order: 2; /* Move the image below the text on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .focus-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .focus-item p {
+    font-size: 0.85rem;
+  }
+
+  .focus-item i {
+    font-size: 22px;
+  }
+}
 
 /* Values Section */
 .values-section {
@@ -668,6 +781,7 @@ h2 {
 
 .section-subtitle span {
   font-weight: bold;
+  font-size: 1.2rem;
   background-color: #fe3b6f;
   background-image: linear-gradient(to top, #CE8F1F 0%, #fac677 100%);
   background-size: 100%;
@@ -771,7 +885,7 @@ h2 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.6); /* Adds a dark overlay to make the text more readable */
+  background-color: rgba(0, 0, 0, 0.6); 
 }
 
 .bank-details .bank-details-h5 {
