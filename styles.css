@@ -92,7 +92,6 @@
     width: 100%;
     transition: all 0.5s ease;
     z-index: -1;
-    font-family: Arial, sans-serif;
     justify-items: center; 
   }
 
@@ -155,7 +154,6 @@
 
 .navbar__menu a {
   font-size: 1.4rem;
-  font-weight: 600;
 }
 
 .navbar__menu .menu-item {
@@ -1036,6 +1034,59 @@ h2 {
 
 iframe {
   border-radius: 8px;
+}
+
+#music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #444;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999; /* Ensures it's always visible */
+}
+
+.pause-music-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 5px 10px; /* Reduced padding */
+  font-size: 12px; /* Smaller font */
+  width: auto; /* Dynamic width */
+  height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .pause-music-btn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 5px 10px; /* Reduced padding for smaller screens */
+    font-size: 12px; /* Smaller font */
+    width: 50px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .pause-music-btn {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 5px 10px; /* Reduced padding for smaller screens */
+    font-size: 12px; /* Smaller font */
+    width: 50px;
+    height: auto;
+  }
 }
 
 /* Footer Section */

@@ -110,3 +110,37 @@ faqItems.forEach(item => {
   });
 });
 
+// toggle music on and off
+var music = document.getElementById('background-music');
+var controlButton = document.getElementById('music-control');
+
+// Function to check if music should play based on previous user interaction
+function checkMusicState() {
+  if (localStorage.getItem('musicPaused') === 'true') {
+    controlButton.textContent = 'Play Music';
+  } else {
+    music.play().catch(() => {
+      controlButton.textContent = 'Play Music';
+    });
+    controlButton.textContent = 'Pause Music';
+  }
+}
+
+// Play or pause the music and store the user's preference
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+    controlButton.textContent = 'Pause Music';
+    localStorage.setItem('musicPaused', 'false');
+  } else {
+    music.pause();
+    controlButton.textContent = 'Play Music';
+    localStorage.setItem('musicPaused', 'true');
+  }
+}
+
+// On page load, check the music state from localStorage
+window.onload = function() {
+  checkMusicState();
+};
+
