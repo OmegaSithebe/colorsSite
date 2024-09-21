@@ -75,8 +75,6 @@ const hideMobileMenu = () => {
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
 
-
-
 // Our values
 
 document.querySelectorAll('.value-card').forEach(card => {
@@ -89,19 +87,15 @@ document.querySelectorAll('.value-card').forEach(card => {
 });
 
 // FAQs
-
 // Select all FAQ items
 const faqItems = document.querySelectorAll('.faq-item');
 
-// Add event listener to each FAQ question
 faqItems.forEach(item => {
   const question = item.querySelector('.faq-question');
 
   question.addEventListener('click', () => {
-    // Toggle 'active' class on the clicked item
     item.classList.toggle('active');
 
-    // Close other open items, if necessary
     faqItems.forEach(otherItem => {
       if (otherItem !== item) {
         otherItem.classList.remove('active');
@@ -143,4 +137,60 @@ function toggleMusic() {
 window.onload = function() {
   checkMusicState();
 };
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwQcRq-2q8BZ05JGX8lgoWu2MQ0ePUz8MIAvHf7Wg5845t2MEHz1E6f2riW7KM-Qhle/exec';
+      const form = document.forms['submit-to-google-sheet'];
+    
+      // Schedule Call button toggle
+      document.getElementById('scheduleCallBtn').addEventListener('click', function() {
+        const formContainer = document.getElementById('formContainer');
+        formContainer.classList.toggle('hidden');
+      });
+    
+      // Handle form submission
+      document.getElementById('scheduleForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        const name = document.getElementById('name').value;
+        const cellphone = document.getElementById('cellphone').value;
+    
+        if (name && cellphone) {
+          alert(`Thank you, ${name}. We will contact you at ${cellphone} shortly.`);
+          
+          // Prepare the form data to be submitted to Google Sheets
+          const formData = new FormData(form);
+          
+          // Send data to Google Apps Script
+          fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => response.json())
+            .then(data => {
+              if (data.result === "Success") {
+                alert('Your information has been submitted successfully!');
+              } else {
+                
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('There was an error submitting your information. Please try again.');
+            });
+    
+          // Reset the form after submission
+          form.reset(); 
+        } else {
+          alert('Please fill in all fields.');
+        }
+      });
+
+
+  // Contact Us 
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  alert("Your query has been submitted successfully!");
+
+  contactForm.reset();
+});
 

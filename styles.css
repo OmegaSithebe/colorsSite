@@ -31,7 +31,7 @@
 }
 
 #navbar__logo img {
-  width: 140px; 
+  width: 130px; 
   height: auto; 
 }
 
@@ -75,6 +75,10 @@
 .navbar__links:hover {
   color: #fcac18;
   transition: all 0.3s ease;
+}
+
+.navbar__menu a:hover {
+  color: #fcac18;  
 }
 
 /* Active Page Highlight */
@@ -469,6 +473,67 @@
     padding: 12px 36px;
     margin: 2.5rem 0;
   }
+}
+
+.schedule__container {
+  max-width: 600px;
+  margin: 20 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.schedule__btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0ad4e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #ec971f;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: #f0ad4e;
+  outline: none;
 }
 
 /* Focus Section */
@@ -1056,7 +1121,7 @@ iframe {
   z-index: 1000;
   padding: 5px 10px; /* Reduced padding */
   font-size: 12px; /* Smaller font */
-  width: auto; /* Dynamic width */
+  width: 50px; /* Dynamic width */
   height: auto;
 }
 

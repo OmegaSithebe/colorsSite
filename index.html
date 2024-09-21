@@ -56,7 +56,7 @@
           <h1 class="hero__heading">Welcome to the <span> <br>Lina Nkosi Foundation!</span></h1>
           <p class="hero__description"> Together, we can build a brighter future, one step at a time. </p>
           <p class="hero__description">Every effort helps create lasting change.</p>
-          <button class="main__btn"><a href="#">Explore</a></button>
+          <button class="main__btn"><a href="#about">Explore</a></button>
       </div>
     </div>
 
@@ -67,11 +67,11 @@
         </div>
         <div class="main__content">
           <h1>About LINA NKOSI FOUNDATION</h1>
-          <p>We have the EDGE TO WIN <br>
+          <p>We have the EDGE TO WIN 
             <br>We encourage people and individuals never to give up on their dreams as we believe each person in the universe.
             <br>DO MAKE A DIFFERENCE 
             <br><br>From the humble beginnings with social justice as well as  human upliftment characteristics, we believe we CAN make a difference. 
-            <br><br>In all we do WE HAVE FAITH. 
+            <br>In all we do WE HAVE FAITH. 
             <br>In all we do we DESIRE not to QUIT.
             <br>If you lose your job keep the FAITH. 
             <br>If you lose your spouse keep the FAITH. 
@@ -80,7 +80,23 @@
             <br>You gotta KEEP YOUR FAITH!!
             <br>So let's work together to make that happen......make the difference</p>
             <p class="founded-p">Founded in 2020 during the global COVID-19 pandemic, the Lina Nkosi Foundation emerged as a beacon of hope in challenging times. While many faced uncertainty and despair we KEPT OUR FAITH, our unwavering commitment was to stand ready to assist wherever help was needed. We remain dedicated to uplifting communities and fostering resilience through every obstacle.</p>
-          <button class="main__btn"><a href="#">Schedule Call</a></button>
+            <div class="schedule__container">
+              <h2>Schedule a Call</h2>
+              <button id="scheduleCallBtn" class="schedule__btn">Schedule Call</button>
+      
+              <div id="formContainer" class="hidden">
+                  <form name="submit-to-google-sheet" id="scheduleForm">
+                      <label for="name">Name & Surname:</label>
+                      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                      
+                      <label for="cellphone">Cellphone Number:</label>
+                      <input type="tel" id="cellphone" name="cellphone" placeholder="Enter your cellphone number" required>
+                      
+                      <button type="submit" class="btn">Submit</button>
+                  </form>
+              </div>
+          </div>
+            <!-- <button class="main__btn"><a href="#">Schedule Call</a></button> -->
         </div>
       </div>
     </div>
@@ -256,35 +272,38 @@
       </div>
     </section>
 
-    <!-- Contact Us Section -->
-    <div class="contact-content" id="contact-us">
-      <h1 >Still have a query? Fill out the form!</h1>
-      <div class="contact-container">
-        <!-- Left Column: Contact Form -->
-        <div class="contact-form-column">
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Name*" required>
-              <input type="text" name="surname" placeholder="Surname*" required>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Email*" required>
-              <input type="tel" name="phone" placeholder="Phone*" required>
-            </div>
-            <textarea name="message" placeholder="Message..." required></textarea>
-            <button type="submit">Send</button>
-          </form>
+<!-- Contact Us Section -->
+<div class="contact-content" id="contact-us">
+  <h1>Still have a query? Fill out the form!</h1>
+  <div class="contact-container">
+    <!-- Left Column: Contact Form -->
+    <div id="contact-formID" class="contact-form-column">
+      <form name="submit-to-google-sheet" id="contactForm" class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Name*" required>
+          <input type="text" id="surname" name="surname" placeholder="Surname*" required>
         </div>
-
-        <!-- Right Column: Banking Details -->
-        <div class="bank-details">
-          <h5 class="bank-details-h5">Bank Details:</h5>
-          <h5 class="bank-details-h5">LN Foundation</h5>
-          <h5 class="bank-details-h5">Bank Type: Capitec Bank</h5>
-          <h5 class="bank-details-h5">Account number: 230 1777 584</h5>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email*" required>
+          <input type="tel" id="phone" name="phone" placeholder="Phone*" required>
         </div>
-      </div>
+        <textarea id="message" name="message" placeholder="Message..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      
     </div>
+
+    <!-- Right Column: Banking Details -->
+    <div class="bank-details">
+      <h5 class="bank-details-h5">Bank Details:</h5>
+      <h5 class="bank-details-h5">LN Foundation</h5>
+      <h5 class="bank-details-h5">Bank Type: Capitec Bank</h5>
+      <h5 class="bank-details-h5">Account number: 230 1777 584</h5>
+    </div>
+  </div>
+</div>
+
+
 
 
     <!-- Location -->
@@ -362,7 +381,39 @@
       </div>
     </footer>
 
-   
-    <script src="app.js"></script>
+   <script src="app.js"></script>
+  
+   <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz3eVxRx5REd9PW0OyRLHbEGbjNVsIfX9gbapchuqCzBeXhm3n1RQV4dDICr7_Ji96X/exec';
+    const contactForm = document.forms['submit-to-google-sheet'];
+  
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+  
+      // Send data to Google Sheets
+      fetch(scriptURL, { method: 'POST', body: new FormData(contactForm) })
+        .then(response => {
+          if (response.ok) {
+            console.log('Success!', response); // Log success to console
+            
+            // Show success message to the user
+            alert("Your query has been submitted successfully!");
+            
+            // Optionally reset the form after submission
+            contactForm.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        })
+        .catch(error => {
+          console.error('Error!', error.message); // Log error to console
+          
+          // Optionally show an error message to the user
+          alert("There was an error submitting your query. Please try again.");
+        });
+    });
+  </script>
+  
   </body>
 </html>
+
