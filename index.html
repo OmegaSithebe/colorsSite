@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lina Nkosi Foundation</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles5.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -12,9 +12,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
+    <!-- Audio element for background music -->
+    <audio id="background-music" src="audio/Background audio for LN Foundation.mpeg" loop></audio>
+
+
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
@@ -63,7 +68,7 @@
     <div class="main" id="about">
       <div class="main__container">
         <div class="main__img--container">
-          <div class="main__img--card"></div>
+          <div class="main__img--card"><img src="images/Homeless1.jpeg" alt=""></div>
         </div>
         <div class="main__content">
           <h1>About LINA NKOSI FOUNDATION</h1>
@@ -133,7 +138,7 @@
           </div>
       </div>
       <div class="image-section">
-          <img src="/images/non-profit event.jpg" alt="Right Side Image">
+          <img src="/images/Homeless 2.jpeg" alt="Right Side Image">
       </div>
     </section>
 
@@ -175,30 +180,49 @@
       </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="gallery-item">
+        <span class="icon-text">
+          <img src="images/masallah.jpg" alt="Masallah" class="icon">
+          <span class="masallah-text">MASALLAH</span>
+        </span>
+        <p>Our mission is to protect people from bad things.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="images/donation 1.jpeg" alt="Event 1">
+        <video controls>
+          <source src="images/Video homeless captured.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="images/donation 4.jpeg" alt="Event 3">
+      </div>
+    </section>
+
     <!-- FAQs -->
     <section class="faq-section" id="faqs">
       <h1 class="faq-title">Frequently Asked Questions</h1>
       <div class="faq-container">
           <div class="faq-item">
-              <div class="faq-question">What is the mission of the Lina Nkosi Foundation?</div>
+              <div class="faq-question">What is the mission of the Lina Nkosi Foundation organisation?</div>
               <div class="faq-answer">
                   <p>The mission of the Lina Nkosi Foundation is to support vulnerable communities by providing resources, education, and services that foster social and economic empowerment.</p>
               </div>
           </div>
           <div class="faq-item">
-              <div class="faq-question">What types of initiatives does the foundation support?</div>
+              <div class="faq-question">What types of initiatives does the organisation support?</div>
               <div class="faq-answer">
-                  <p>The foundation focuses on initiatives related to education, healthcare, poverty alleviation, community development, and women's empowerment.</p>
+                  <p>The organisation focuses on initiatives related to education, healthcare, poverty alleviation, community development, and women's empowerment.</p>
               </div>
           </div>
           <div class="faq-item">
-              <div class="faq-question">How can I get involved with the foundation?</div>
+              <div class="faq-question">How can I get involved with the organisation?</div>
               <div class="faq-answer">
-                  <p>You can get involved by volunteering, donating, or partnering with the foundation. isit our 'Contact Us' section to leave your details, and our trusted agent will be in touch. You can also connect with us through our social media platforms.</p>
+                  <p>You can get involved by volunteering, donating, or partnering with the organisation. Visit our 'Contact Us' section to leave your details, and our trusted agent will be in touch. You can also connect with us through our social media platforms.</p>
               </div>
           </div>
           <div class="faq-item">
-              <div class="faq-question">Where does the Lina Nkosi Foundation operate?</div>
+              <div class="faq-question">Where does the Lina Nkosi Foundation organisation operate?</div>
               <div class="faq-answer">
                   <p>We primarily operate in underserved communities in South Africa, but our programs and initiatives have the potential to expand to other regions.</p>
               </div>
@@ -216,9 +240,9 @@
               </div>
           </div>
           <div class="faq-item">
-              <div class="faq-question">Can companies or organizations partner with the Lina Nkosi Foundation?</div>
+              <div class="faq-question">Can companies or organisations partner with the Lina Nkosi Foundation?</div>
               <div class="faq-answer">
-                  <p>Yes, we welcome partnerships with companies, organizations, and other foundations that align with our mission and values. Reach out to us to explore partnership opportunities.</p>
+                  <p>Yes, we welcome partnerships with companies, organisation, and other foundations that align with our mission and values. Reach out to us to explore partnership opportunities.</p>
               </div>
           </div>
       </div>
@@ -245,9 +269,9 @@
           </div>
           <div class="team-member">
               <div class="member-image">
-                  <img src="images/Ms BJ Magalane.jpeg" alt="Busisiwe Jane Magalane Ms">
+                  <img src="images/Lihle Pretty Mbewe.jpeg" alt="Lihle Pretty Mbewe Ms">
               </div>
-              <h3>BUSISIWE JANE MAGALANE MS</h3>
+              <h3>LIHLE PRETTY MBEWE MS</h3>
               <p class="role">Director</p>
               <p>Connect on...</p>
               <div class="social-links">
@@ -258,9 +282,9 @@
           </div>
           <div class="team-member">
               <div class="member-image">
-                  <img src="images/ANELE MAGALANE MS.jpeg" alt="Anele Magalane Ms">
+                  <img src="images/Kgomotso Christine Lebere.jpeg" alt="Kgomotso Christine Lebere Ms">
               </div>
-              <h3>ANELE MAGALANE MS</h3>
+              <h3>KGOMOTSO CHRISTINE LEBERE MS</h3>
               <p class="role">Director</p>
               <p>Connect on...</p>
               <div class="social-links">
@@ -310,7 +334,7 @@
     <div class="location-container">
       <div class="box general-contact">
           <h3>General contact details</h3>
-          <p>Telephone: <br>+27 (0)11 547 5600</p>
+          <p>Telephone: <br>063 194 5093</p>
           <p>Web: <a href="http://www.linankosifoundation.co.za" target="_blank">www.linankosifoundation.co.za</a></p>
       </div>
 
@@ -346,15 +370,6 @@
       </iframe>
     </div>
 
-     <!-- Audio element for background music -->
-  <audio id="background-music" autoplay loop>
-    <source src="audio/Background audio for LN Foundation.mpeg" type="audio/mpeg">
-  </audio>
-
-  <!-- Music control button -->
-  <button id="music-control" class="pause-music-btn" onclick="toggleMusic()">Pause Music</button>
-
-
     <!-- Footer Section -->
     <footer>
       <div class="footer-container">
@@ -381,7 +396,7 @@
       </div>
     </footer>
 
-   <script src="app.js"></script>
+   <script src="apps1.js"></script>
   
    <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz3eVxRx5REd9PW0OyRLHbEGbjNVsIfX9gbapchuqCzBeXhm3n1RQV4dDICr7_Ji96X/exec';
