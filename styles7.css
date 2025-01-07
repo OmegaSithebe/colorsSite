@@ -1,127 +1,288 @@
-/* Navbar Styles */
+/* Importing Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Kumbh Sans', sans-serif;
-  scroll-behavior: smooth;  /* Smooth scrolling for anchor links */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Raleway", sans-serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+:root {
+    /* Colors */
+    --white-color: #fff;
+    --green-color: #24572c;
+    --grey-color: #333;
+    --brown-color: #957B46;
+    --dark-color: #252525;
+    --primary-color: #FED018;
+    --secondary-color: #f3961c;
+    --light-pink-color: #faf4f5;
+    --medium-gray-color: #ccc;
+    --light-blue-color: #8DD7FB;
+    --pink-color: #D033B0;
+    --light-pink-color: #fffdfd;
+    --light-pink-color2: #faf8f8;
+    --main-color: #4a3adc;
+    --dark-color: #11152a;
+    --light-color:#d0d4ed;
+    --hero-back: #FD6E6A;
+
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.15rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border radius */
+    --border-radius-s: 8px;
+    --border-radius-m: 30px;
+    --border-radius-circle: 50px;
+    --border-radius-circle2: 100px;
+
+    /* Site max width */
+    --site-max-width: 1300px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Stylings for whole site */
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+}
+
+.section-content {
+    margin: 0 auto;
+    max-width: var(--site-max-width);
+}
+
+.section-content .nav-logo img {
+  width: 130px;
+  height: 60px;
+}
+
+.section-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: var(--border-radius-s );
+    background: var(--secondary-color);
+}
+
+/* Navbar styling */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background-image: linear-gradient( 135deg, #FD6E6A 10%);
+}
+
+header .navbar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure the navbar sticks at the top */
 .navbar {
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for better visibility */
 }
 
-.navbar__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1300px;
-  padding: 0 50px;
+/* Align nav links in an equal row */
+.navbar .navbar__menu {
+    display: flex;
+    gap: 10px;
+    list-style: none; /* Removes default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .navbar__menu .navbar__item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar__menu .navbar__links {
+    padding: 10px 18px;
+    background-image: linear-gradient(135deg, #FD6E6A 10%);
+    color: var(--grey-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+    text-decoration: none; /* Removes underline from links */
+}
+
+.navbar .navbar__menu .navbar__links:hover {
+    color: #333;
+    background: #f9d874; 
+    background: -webkit-linear-gradient(
+      to right,
+      #CE8F1F,
+      #f6d959
+    );
+}
+
+/* Specific styles for Login/Signup button */
+.navbar .navbar__menu .login-signup-button {
+  background: #636363;
+  background: -webkit-linear-gradient(
+    to right,
+    #636363,
+    #686868
+  );
+    color: white;
+}
+
+.navbar .navbar__menu .login-signup-button:hover {
+    color: #333;
+    background: #E6C973; 
+    background: -webkit-linear-gradient(
+      to right,
+      #CE8F1F,
+      #EFDE94
+    ); 
+}
+
+/* Ensure buttons have similar styling */
+.navbar .navbar__menu button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: var(--font-size-m);
+}
+
+.navbar, #menu-close-button,
+ #menu-open-button {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: -1000px; /* Initially hidden */
+    width: 100%;
+    background: #ffffff;
+    transition: top 0.5s ease; /* Smooth slide-down/up */
+    z-index: -1;
+  }
+  
+  .navbar__menu.active {
+    top: 100%; /* Visible when active */
+    z-index: 99;
+  }
+  
+
+  .navbar__menu li {
+    list-style: none; /* Remove bullet points */
+    width: 100%; /* Full width of container */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Space between items */
+  }
+
+  .navbar__menu a {
+    text-decoration: none; /* Remove underline */
+    color: #686868; /* Default text color */
+    font-size: 1.2rem; /* Slightly larger font */
+    padding: 5px 15px; /* Add some padding to clickable area */
+    transition: color 0.3s ease;
+  }
+
+  .navbar__menu a:hover {
+    color: #fcac18; /* Highlight on hover */
+  }
+
+  .navbar__menu a.active {
+    color: #fcac18; /* Highlight active link */
+    font-weight: bold; /* Bold active item */
+    border-bottom: 2px solid #fcac18; /* Underline active item */
+  }
+
+  /* Style for the Contact Us button */
+  .navbar__menu .login-signup-button {
+    background: #fcac18; /* Button background */
+    color: #ffffff; /* Text color */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px; /* Adjust button size */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease;
+  }
+
+  .navbar__menu .login-signup-button:hover {
+    background: #e69e16; /* Slightly darker shade on hover */
+    cursor: pointer;
+  }
+
+  /* Hamburger icon styles */
+  .navbar__toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    cursor: pointer;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar__toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 
-
-.navbar__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.navbar__item {
-  height: 80px;
-}
-
-.navbar__links {
-  color: #686868;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  width: 100px;
-  height: 100%;
-  transition: all 0.3s ease;
-  font-size: 2rem;
-}
-
-.navbar__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0.5rem;
-}
-
-.button {
-  text-decoration: none;
-  padding: 7px 7px;
-  background: linear-gradient(to right, #fcb045, #CE8F1F, #E6C973);
-  color: white;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.navbar__links:hover {
-  color: #fcac18;
-  transition: all 0.3s ease;
-}
-
-.navbar__menu a:hover {
-  color: #fcac18;  
-}
-
-/* Active Page Highlight */
-.navbar__links.highlight {
-  color: #CE8F1F;
-  font-weight: bold;
-}
-
-
-
-.navbar__menu a {
-  font-size: 1.4rem;
-}
-
-.navbar__menu .menu-item {
-  text-transform: uppercase;
-  padding: 0.5rem 0;
-}
-
-/* Pointer on hover */
-.navbar__menu li:hover {
-  cursor: pointer;
-}
-
-/* Add padding around 'Contact Us' */
-.navbar__menu .contact-us {
-  background-color: #ff6347;
-  padding: 10px 20px;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  margin-top: 20px;
-  text-transform: uppercase;
-}
-
-.navbar__menu .contact-us:hover {
-  background-color: #ff4500; /* Darker shade on hover */
-  cursor: pointer;
-}
 
 /* Hero Section */
 .hero {
@@ -145,8 +306,8 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.5; /* Adjust this value to control the opacity */
-  z-index: 1; /* Ensure the image stays behind the text */
+  opacity: 0.5; 
+  z-index: 1; 
 }
 
 .hero h1, .hero p, .hero .main__btn {
@@ -167,7 +328,7 @@ html, body {
 }
 
 .hero__heading {
-  font-size: 80px;
+  font-size: 70px;
   margin-bottom: 20px;
   color: #686868;
 }
@@ -215,7 +376,8 @@ html, body {
   border-bottom: 4px solid #E6C973;
 }
 
-@media screen and (max-width: 768px) {
+
+ @media screen and (max-width: 768px) {
   .hero__heading {
     font-size: 60px;
   }
@@ -228,7 +390,7 @@ html, body {
 /* About Section */
 .main {
   background-color: #ffffff;
-  padding: 10rem 0;
+  padding: 2rem 0;
 }
 
 .main__container {
@@ -277,7 +439,7 @@ html, body {
   background: #833ab4;
   background: -webkit-linear-gradient(to right, #fcb045, #CE8F1F, #E6C973);
   background: linear-gradient(to right,  #fcb045, #CE8F1F, #E6C973);
-  padding: 20px 60px;
+  padding: 10px 30px;
   border: none;
   border-radius: 4px;
   margin-top: 2rem;
@@ -331,6 +493,41 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* About Section */
+.about-section {
+  padding: 120px 0;
+  background: var(--light-pink-color2);
+}
+
+.about-section .section-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section .about-image-wrapper .about-image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: var(--border-radius-m);
+}
+
+.about-section .about-details .section-title {
+  padding: 0;
+}
+
+.about-section .about-details {
+  max-width: 50%  ;
+}
+
+.about-section .about-details .text {
+  line-height: 30px;
+  margin: 50px 0 30px;
+  text-align: center;
+  font-size: var(--font-size-m);
 }
 
 .fa-layer-group,
@@ -414,6 +611,109 @@ html, body {
     margin: 2.5rem 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  /* Stack the image and text vertically for smaller screens */
+  .about-section .section-content {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center-align content */
+    gap: 20px; /* Reduce gap between image and text */
+  }
+
+  /* Make the image smaller and centered */
+  .about-section .about-image-wrapper .about-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Optional: Limit max size */
+    margin: 0 auto; /* Center the image */
+  }
+
+  /* Ensure text content spans full width */
+  .about-section .about-details {
+    max-width: 100%;
+    padding: 0 15px; /* Add horizontal padding for better readability */
+  }
+
+  .about-section .about-details .text {
+    font-size: var(--font-size-s); /* Reduce font size for smaller screens */
+    text-align: justify; /* Improve readability for paragraphs */
+    margin: 20px 0; /* Adjust spacing */
+  }
+
+  /* Schedule container adjustments */
+  .schedule__container {
+    text-align: center; /* Center the entire section */
+    margin: 20px 0; /* Add spacing around */
+  }
+
+  .schedule__btn {
+    padding: 10px 20px;
+    font-size: var(--font-size-m);
+  }
+
+  /* Adjust form styling */
+  #formContainer {
+    padding: 10px;
+  }
+
+  #scheduleForm label {
+    display: block;
+    text-align: left; /* Align labels left for better readability */
+    margin-bottom: 5px;
+  }
+
+  #scheduleForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-s);
+  }
+
+  #scheduleForm .btn {
+    display: block;
+    width: 100%; /* Full-width submit button */
+    padding: 10px;
+    font-size: var(--font-size-m);
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-s);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .about-section {
+    padding: 60px 0; /* Reduce top and bottom padding */
+  }
+
+  .about-section .section-content {
+    gap: 15px; /* Reduce gap further */
+  }
+
+  .about-section .about-details .text {
+    font-size: 14px; /* Further reduce font size */
+    margin: 15px 0; /* Adjust spacing */
+  }
+
+  .schedule__btn {
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 16px;
+  }
+
+  /* Adjust input fields for very small screens */
+  #scheduleForm input {
+    font-size: 14px;
+  }
+
+  #scheduleForm .btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
 
 .schedule__container {
   max-width: 600px;
@@ -603,10 +903,6 @@ h2 {
   text-align: center;
 }
 
-.values-section h2 {
-  font-size: 3rem;
-}
-
 .values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -699,6 +995,119 @@ h2 {
     grid-template-columns: 1fr; /* Stack the cards in a single column on small screens */
   }
 }
+
+
+/* Other Images Section */
+.otherContent-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+}
+
+.otherText-container {
+  text-align: left;
+  background-color: #333;
+  color: #fff;
+  padding: 30px;
+  margin-right: 40px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.otherText-container h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.otherText-container p {
+  line-height: 1.6;
+}
+
+.otherText-container p span {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #ffdd00;
+}
+
+.otherText-container .otherContact a {
+  color: #ffdd00;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.otherText-container .otherContact a:hover {
+  text-decoration: underline;
+}
+
+.otherImage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.otherImage-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 768px) {
+  /* Stack the image and text vertically for smaller screens */
+  .otherContent-section {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    padding: 20px;
+  }
+
+  /* Adjust text container styling */
+  .otherText-container {
+    margin-right: 0; /* Remove right margin */
+    margin-top: 20px; /* Add spacing between image and text */
+    max-width: 100%; /* Make text container full-width */
+    text-align: justify; /* Align text for readability */
+    padding: 20px; /* Adjust padding */
+  }
+
+  /* Center the images and adjust their size */
+  .otherImage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Reduce gap between images */
+  }
+
+  .otherImage-container img {
+    width: 100%; /* Make images responsive */
+    max-width: 400px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center images */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for smaller devices */
+  .otherText-container h1 {
+    font-size: 1.5em; /* Reduce heading size */
+    margin-bottom: 10px;
+  }
+
+  .otherText-container p {
+    font-size: 14px; /* Reduce font size */
+    line-height: 1.4;
+  }
+
+  .otherImage-container img {
+    max-width: 300px; /* Further reduce image size for very small screens */
+  }
+}
+
+
+
 
 /* Gallary */
 .gallery-item {
@@ -1240,76 +1649,4 @@ footer {
 
 .footer-bottom a:hover {
   text-decoration: underline;
-}
-
-
-/* Repsonsive */
-
-@media screen and (max-width: 960px) {
-  .navbar__menu {
-    display: grid;
-    height: 100px;
-    position: absolute;
-    top: -1000px;
-    width: 100%;
-    transition: all 0.5s ease;
-    z-index: -1;
-    justify-items: center; 
-  }
-
-  .navbar__menu.active {
-    background: #ffffff;
-    top: 100%;
-    z-index: 99;
-    height: auto;
-    font-size: 1.5rem;
-    padding: 20px;
-    text-align: left;
-  }
-
-  .navbar__menu li {
-    list-style: none;
-    padding: 10px 0;
-  }
-
-  .navbar__menu a {
-    text-decoration: none;
-    color: #686868;
-    transition: color 0.3s ease;
-  }
-
-  .navbar__menu a:hover {
-    color: #fcac18; 
-    cursor: pointer;
-  }
-
-  .navbar__menu a.active {
-    color: #fcac18; 
-  }
-
-  .navbar__btn .button {
-    color: #ffffff;
-  }
-
-  .navbar__toggle .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #333;
-    cursor: pointer;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .navbar__toggle.is-active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar__toggle.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .navbar__toggle.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 }
